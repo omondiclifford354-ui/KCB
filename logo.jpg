@@ -1,0 +1,50 @@
+// In your main SCSS file
+@import 'kcb-vendor';
+
+// KCB Login Page
+.kcb-login-page {
+    background: kcb-color('background');
+    
+    .login-container {
+        @include kcb-card('hover');
+        max-width: 400px;
+        margin: kcb-space('xl') auto;
+        
+        h2 {
+            color: kcb-color('primary');
+            font-family: kcb-font('headings');
+        }
+        
+        input {
+            @include kcb-input('focus');
+            margin-bottom: kcb-space('md');
+        }
+        
+        button {
+            @include kcb-button('primary');
+            width: 100%;
+        }
+        
+        @include kcb-responsive('mobile') {
+            margin: kcb-space('md');
+            padding: kcb-space('lg');
+        }
+    }
+}
+
+// KCB Product Card
+.kcb-product-card {
+    @include kcb-card('hover');
+    @include vendor('transition', 'transform 0.3s ease');
+    
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    .product-badge {
+        background: kcb-gradient('accent');
+        color: white;
+        padding: kcb-space('xs') kcb-space('sm');
+        border-radius: 4px;
+    }
+}
